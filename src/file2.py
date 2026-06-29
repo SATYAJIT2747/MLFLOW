@@ -1,7 +1,12 @@
 import mlflow
 import mlflow.sklearn
 from matplotlib import pyplot as plt
-mlflow.set_tracking_uri('http://localhost:5000')
+# dagshub remote tracking uri
+import dagshub
+dagshub.init(repo_owner='satyagudu1146', repo_name='MLFLOW', mlflow=True)
+mlflow.set_tracking_uri("https://dagshub.com/satyagudu1146/MLFLOW.mlflow")
+
+
 import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_wine
